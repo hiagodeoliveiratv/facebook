@@ -6,7 +6,7 @@ global $config; // transforma a variável em global para ser usada em outras par
 $config = array();
 
 if (ENVIRONMENT == "development") {
-	$config['dbname'] = 'galeria';
+	$config['dbname'] = 'facebook';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = '1020304050';
