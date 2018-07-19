@@ -1,16 +1,19 @@
 <?php 
-class usuario {
+class usuario extends model{
 
-	private $name;
+	public function __construct() {
+		parent::__construct();
+	}
 
-	public function setName($n) {
-	$this->name = $n;
+	public function verificarLogin() {
+		if(!isset($_SESSION['lgsocial']) || (isset($_SESSION['lgsocial']) && !empty($_SESSION['lgsocial']))) {
+			header("Location:".BASE."login");
+			exit;
+		}
 
 	}
 
-	public function getName() {
-		return $this->name;
-	}
+	
 }
 
  ?>

@@ -1,6 +1,7 @@
 <?php 
 require 'environment.php';
-define("BASE_URL","http://localhost/CursoB7Web/mvc/");
+define("BASE","http://localhost/facebook/");
+
 global $config; // transforma a variável em global para ser usada em outras partes do sistema!
 $config = array();
 

@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Título do site</title>
-	<link href="<?php echo BASE_URL;?>/assets/css/style.css" rel="stylesheet"/>
+	<title>Facebook</title>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo BASE; ?>assets/css/style.css">
 </head>
 	<body>
-		<h1>Topo do meu site</h1>
-		.....
-		.....
-		<?php $this->loadViewInTemplate($viewName, $viewData);
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<div id="navbar">
+						<ul class="nav navbar-nav navbar-left">
+							<li><a href="<?php echo BASE;?>">Rede Social</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		
+		<?php // $this->loadViewInTemplate($viewName, $viewData);
 		?>
-		.....
-		.....
-		<h1>Rodapé do meu site</h1>
+		
+		
 	</body>
 </html>

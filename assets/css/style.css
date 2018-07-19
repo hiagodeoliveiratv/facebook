@@ -1,4 +1,17 @@
 body {
-	background-color:blue;
-	color: #FFF;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #000;
+	color: #5c5c5c;
+	padding: 20px;
+	border-radius: 5px;
+}
+header .logo {
+	font-weight: bold;
+}
+.container {
+	max-width: 990px;
 }
