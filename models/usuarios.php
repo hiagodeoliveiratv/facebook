@@ -65,6 +65,73 @@ class usuarios extends model{
 			}
 	}
 
+	public function getDados($id) {
+		$array = array();
+		$sql = "SELECT * FROM usuarios WHERE id = '$id'";
+		$sql = $this->db->query($sql);
+			if ($sql->rowCount() > 0) {
+				$array = $sql->fetch();
+			}
+		return $array;
+	}
+
+	public function atualizarPerfil ($array = array()) {
+
+		if(count($array) > 0) {	
+
+			$sql = "UPDATE usuarios SET ";
+
+			foreach ($array as $campo => $valor) {
+				$campos[] = $campo." = '".$valor."'";
+			}
+
+			$sql .= implode(',', $campos); // para remover a vírgula dos campos
+			$sql .= " WHERE id = '".($_SESSION['lgsocial'])."'";
+			$this->db->query($sql);
+
+		}
+	}
+
+	public function getSugestoes($limit = 5) {
+			$array = array();
+			$meuid = $_SESSION['lgsocial'];
+
+			$r = new relacionamentos();
+			$ids = $r->getIdsFriends($_SESSION['lgsocial']);
+
+			if(count($ids) == 0) {
+				$ids[] = $meuid;
+			}
+
+			$sql = "SELECT 
+			usuarios.id,
+			usuarios.nome
+			FROM
+			usuarios
+			WHERE
+			usuarios.id != '$meuid' AND
+			usuarios.id NOT IN (".implode(',', $ids).")
+
+			ORDER BY RAND()
+			LIMIT $limit
+			";
+			$sql = $this->db->query($sql);
+				if($sql->rowCount() > 0) {
+					$array = $sql->fetchAll();
+				}
+
+
+			return $array;
+
+	}
+
+	public function addFriend($id1, $id2) {
+		$sql = "INSERT INTO relacionamentos SET usuario_de = '$id1', usuario_para = '$id2', status = '0'";
+		$this->db->query($sql);
+
+
+	}
+
 	
 }
 

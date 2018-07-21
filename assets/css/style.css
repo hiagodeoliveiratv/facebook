@@ -15,3 +15,33 @@ header .logo {
 .container {
 	max-width: 990px;
 }
+
+.widget {
+
+	margin-bottom: 20px;
+}
+.sugestaoitem,
+.requisicaoitem {
+	height: 40px;
+	line-height: 40px;
+}
+.post_area {
+	border-bottom: 1px solid  #CCC;
+}
+.post_area textarea {
+	height: 100px;
+}
+.post_area input[type=submit] {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.feeditem {
+	border-bottom: 1px solid #CCC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.feeditem_texto {
+	background-color: #EEE;
+	padding: 10px;
+	margin-bottom: 10px;
+}
